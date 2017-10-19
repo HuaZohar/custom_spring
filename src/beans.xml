@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+	<!-- 使用scope设置bean对象的实例化作用域（singleton单实例  prototype多实例） -->
+	<!-- <bean id="studentService" class="cn.hq.service.impl.StudentServiceImpl" scope="prototype"></bean> -->
+	
+	<!-- 使用lazy-init="true"设置bean延迟实例化 -->
+	<!-- <bean id="studentService" class="cn.hq.service.impl.StudentServiceImpl"></bean> -->
+	
+	<!-- bean的生命周期 -->
+<!-- 	<bean id="studentService" class="cn.hq.service.impl.StudentServiceImpl" 
+	init-method="init"
+	destroy-method="destroy"></bean> -->
+	
+	<!-- 通过工厂静态方法实例化对象 -->
+	<!-- <bean id="studentService2" class="cn.hq.spring.StudentServiceFactory" factory-method="createStudentBean"></bean> -->
+	
+	
+	<!-- 通过工厂类实例化对象 -->
+	<!-- <bean id="studentServiceFactory" class="cn.hq.spring.StudentServiceFactory" ></bean>
+	<bean id="studentService3" factory-bean="studentServiceFactory" factory-method="createStudentBean2"></bean>
+	 -->
+	 
+	 
+	<context:annotation-config></context:annotation-config>
+	
+	<bean id="studentDao" class="cn.hq.dao.impl.StudentDaoImpl"></bean>
+	<bean id="studentService" class="cn.hq.service.impl.StudentServiceImpl"></bean>
+	
+	
+</beans>
